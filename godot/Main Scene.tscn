@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Weapon.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.25, 31 )
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="Character" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Icon" type="Sprite" parent="Character"]
+position = Vector2( 2, -5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2( 3, -3 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+current = true
+
+[node name="Weapon" type="Area2D" parent="Character"]
+script = ExtResource( 3 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Character/Weapon"]
+scale = Vector2( 0.689, 1.29 )
+z_index = -1
+color = Color( 0.0901961, 0.0862745, 0.0862745, 1 )
+offset = Vector2( 0, 35 )
+texture_rotation_degrees = 288.0
+polygon = PoolVector2Array( -28, -36, 5.96046e-08, -142.697, 29, -37 )
