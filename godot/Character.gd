@@ -3,6 +3,7 @@ extends Area2D
 export var speed = 400
 var screen_size
 var camera
+var animationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,9 @@ func _ready():
 	Input.set_use_accumulated_input(false)
 
 	camera = $Camera2D
+	animationPlayer = $AnimationPlayer
+	animationPlayer.play("idle")
+	
 
 func _input(event):
 	pass
